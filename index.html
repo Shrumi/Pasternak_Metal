@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пастернак в стиле Хэви-Метал | ShrUmi DjAga</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="flame-bg"></div>
+    
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__logo">PASTERNAK <span class="accent">METAL</span></h1>
+            </div>
+        </header>
+
+        <main class="main container">
+            <section class="hero">
+                <div class="hero__cover-art">
+                    <svg viewBox="0 0 500 500" class="svg-cover">
+                        <defs>
+                            <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="fireGlow">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <rect width="500" height="500" fill="url(#metalGrad)" />
+                        <!-- Abstract guitar strings / fire -->
+                        <path d="M50,500 L250,0 L450,500" stroke="#ff4500" stroke-width="2" fill="none" opacity="0.5" filter="url(#fireGlow)" />
+                        <path d="M100,500 L250,50 L400,500" stroke="#ffd700" stroke-width="1" fill="none" opacity="0.3" />
+                        <!-- Symbolic Candle -->
+                        <rect x="245" y="250" width="10" height="150" fill="#ffffff" opacity="0.8" />
+                        <path d="M250,210 Q265,240 250,250 Q235,240 250,210" fill="#ff8c00" filter="url(#fireGlow)" />
+                        
+                        <text x="250" y="450" font-family="Metal Mania" font-size="40" fill="#ffffff" text-anchor="middle" letter-spacing="2">HEAVY POETRY</text>
+                    </svg>
+                </div>
+                
+                <div class="hero__info">
+                    <h2 class="hero__title">Классика в огне</h2>
+                    <p class="hero__description">
+                        Проект <strong>"Пастернак в стиле хэви-метал"</strong> — это столкновение двух миров. Утонченная поэзия Бориса Пастернака обретает новую плоть в мощных гитарных риффах и агрессивных ритмах. Это музыка для тех, кто ценит глубину слова и первобытную энергию металла.
+                    </p>
+                    
+                    <div class="player" id="main-player">
+                        <div class="player__track-info">
+                            <span class="player__current-title" id="current-title">Свеча горела (Heavy Cover)</span>
+                        </div>
+                        <div class="player__controls">
+                            <button class="btn-play" id="play-btn" aria-label="Play">
+                                <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+                                <svg viewBox="0 0 24 24" class="icon-pause"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress" id="progress-bar">
+                                <div class="progress__fill" id="progress-fill"></div>
+                            </div>
+                            <div class="volume">
+                                <input type="range" class="volume__slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
+                            </div>
+                        </div>
+                        <audio id="audio-core" src="track1.mp3"></audio>
+                    </div>
+                </div>
+            </section>
+
+            <section class="playlist-section">
+                <h3 class="section-title">Треклист</h3>
+                <div class="playlist" id="playlist">
+                    <div class="playlist__item playlist__item--active" data-index="0">
+                        <span class="playlist__number">01</span>
+                        <span class="playlist__name">Свеча горела (Heavy Cover)</span>
+                        <span class="playlist__meta">Power Metal</span>
+                    </div>
+                    <div class="playlist__item" data-index="1">
+                        <span class="playlist__number">02</span>
+                        <span class="playlist__name">Любить иных — тяжелый крест</span>
+                        <span class="playlist__meta">Heavy Metal</span>
+                    </div>
+                    <div class="playlist__item" data-index="2">
+                        <span class="playlist__number">03</span>
+                        <span class="playlist__name">Свеча горела (Remastered)</span>
+                        <span class="playlist__meta">Epic Metal</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 ShrUmi DjAga. Поэзия: Борис Пастернак. Звук: Электролес.</p>
+                <div class="footer__links">
+                    <a href="https://github.com/Shrumi/Pasternak_Metal">GitHub Repo</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
